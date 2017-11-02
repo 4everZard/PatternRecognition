@@ -20,9 +20,19 @@ public class Point implements Comparable<Point> {
    }
 
    public int compareTo(Point that) {
-	   
+	   if(this.y < that.y) return -1;
+	   else if(this.y == that.y) {
+		   if(this.x < that.x) return -1;
+		   else if(this.x == that.x) return 0;
+		   else if(this.x > that.x) return 1;
+	   }  
+	   return 1;
    }
    public double slopeTo(Point that) {
+	    if(that.y==this.y && that.x==this.x) return Double.NEGATIVE_INFINITY;
+    	else if(that.y==this.y) return 0.0;
+        else if(that.x==this.x) return Double.POSITIVE_INFINITY;
+	    return ((double)(that.y-this.y))/((that.x-this.x));
 	   
    }
    public Comparator<Point> slopeOrder(){
