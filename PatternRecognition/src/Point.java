@@ -38,6 +38,7 @@ public class Point implements Comparable<Point> {
 	   
    }
    private class SlopeOrder implements Comparator<Point>{
+	   @Override
 	   public int compare(Point a, Point b) {
 			double slopeA = slopeTo(a);
 			double slopeB = slopeTo(b);
